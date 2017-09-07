@@ -10,11 +10,12 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
-@Path("/getUpdates")
+@Path("/299490500:AAH_uZDb4dLl5l65ToXmLhgPJB1LZyUM20M")
 @Consumes(MediaType.APPLICATION_JSON)
-public class UpdateResource {
+public class TelegramUpdateResource {
 
     @POST
+    @Path("/webhook")
     public void getUpdate(Update update) {
         String messageEntityType;
         Logger log = LoggerFactory.getLogger("mylogger");
@@ -28,7 +29,7 @@ public class UpdateResource {
         } else {
             messageEntityType = "empty";
         }
-        
+        log.info(updateMessage.getText());
     }
 
 }
